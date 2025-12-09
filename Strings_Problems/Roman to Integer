@@ -1,0 +1,23 @@
+public int romanToInt(String s) {
+        Map<Character, Integer> std = Map.of(
+            'I', 1,
+            'V', 5,
+            'X', 10,
+            'L', 50,
+            'C', 100,
+            'D', 500,
+            'M', 1000
+        );
+        int sum = 0;
+        char[] n = s.toCharArray();
+        sum = sum + std.get(n[s.length()-1]);
+        for(int i = s.length()-1;  i > 0; i--){
+            if(std.get(n[i]) > std.get(n[i-1])){
+                sum = sum - std.get(n[i-1]);
+            }else{
+                sum = sum + std.get(n[i-1]);
+
+            }
+        }
+        return sum;
+    }
