@@ -1,0 +1,6 @@
+public int lengthOfLastWord(String s) {
+        String rtrim = s.trim();
+        int lastind = rtrim.lastIndexOf(" ");
+        return rtrim.length() - (lastind +1);
+        
+    }
