@@ -1,0 +1,19 @@
+public int strStr(String haystack, String needle) {
+       int h = haystack.length();
+       int end = needle.length();
+        int start = 0;
+        if(haystack.length() ==1 && haystack.equals(needle)){
+            return 0;
+        }
+        while(start < end && end <= h){
+            if( haystack.substring(start, end).equals(needle)  ){
+                return start;
+
+            }
+            start++;
+            end++;
+        } 
+
+        return -1;
+
+    }
